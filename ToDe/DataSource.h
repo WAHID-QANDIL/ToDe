@@ -1,15 +1,15 @@
 //
-//  MainTableViewController.h
+//  DataSource.h
 //  ToDe
 //
 //  Created by Wahid Ali Wahid on 07/04/2026.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MainTableViewController : UITableViewController
+@interface DataSource : NSObject
 
 @end
 
