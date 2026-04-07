@@ -17,8 +17,14 @@
 		3E3996102F84E7A5006541C5 /* ToDeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E39960F2F84E7A5006541C5 /* ToDeTests.m */; };
 		3E39961A2F84E7A5006541C5 /* ToDeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3996192F84E7A5006541C5 /* ToDeUITests.m */; };
 		3E39961C2F84E7A5006541C5 /* ToDeUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E39961B2F84E7A5006541C5 /* ToDeUITestsLaunchTests.m */; };
-		3E39962D2F8503AA006541C5 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E39962C2F8503AA006541C5 /* MainTableViewController.m */; };
-		3E3996302F8521EB006541C5 /* Task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E39962E2F8521EB006541C5 /* Task.xcdatamodeld */; };
+		3E3996362F852996006541C5 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3996352F852996006541C5 /* DataSource.m */; };
+		3E39963F2F855DD0006541C5 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39963D2F855DD0006541C5 /* Task+CoreDataClass.swift */; };
+		3E3996402F855DD0006541C5 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39963E2F855DD0006541C5 /* Task+CoreDataProperties.swift */; };
+		3E3996422F856C67006541C5 /* Task.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 3E39962E2F8521EB006541C5 /* Task.xcdatamodeld */; };
+		3E51D4E72F863E5800AB90DE /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E51D4E62F863E5800AB90DE /* EditViewController.m */; };
+		3E51D4EA2F8649A200AB90DE /* LuanchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E51D4E92F8649A200AB90DE /* LuanchViewController.m */; };
+		3E6E6EAD2F85B5B4007E59A7 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E6E6EAC2F85B5B4007E59A7 /* SDWebImage */; };
+		3E6E6EB02F85BCF1007E59A7 /* AddNewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6E6EAF2F85BCF1007E59A7 /* AddNewTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +62,19 @@
 		3E3996152F84E7A5006541C5 /* ToDeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3996192F84E7A5006541C5 /* ToDeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDeUITests.m; sourceTree = "<group>"; };
 		3E39961B2F84E7A5006541C5 /* ToDeUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDeUITestsLaunchTests.m; sourceTree = "<group>"; };
-		3E39962B2F8503AA006541C5 /* MainTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
-		3E39962C2F8503AA006541C5 /* MainTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		3E39962F2F8521EB006541C5 /* Task.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Task.xcdatamodel; sourceTree = "<group>"; };
+		3E3996312F852640006541C5 /* ToDe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToDe-Bridging-Header.h"; sourceTree = "<group>"; };
+		3E3996342F852996006541C5 /* DataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
+		3E3996352F852996006541C5 /* DataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
+		3E3996382F853C02006541C5 /* periority.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = periority.h; sourceTree = "<group>"; };
+		3E39963D2F855DD0006541C5 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3E39963E2F855DD0006541C5 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3E51D4E52F863E5800AB90DE /* EditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		3E51D4E62F863E5800AB90DE /* EditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		3E51D4E82F8649A200AB90DE /* LuanchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuanchViewController.h; sourceTree = "<group>"; };
+		3E51D4E92F8649A200AB90DE /* LuanchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuanchViewController.m; sourceTree = "<group>"; };
+		3E6E6EAE2F85BCF1007E59A7 /* AddNewTaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddNewTaskViewController.h; sourceTree = "<group>"; };
+		3E6E6EAF2F85BCF1007E59A7 /* AddNewTaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddNewTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E6E6EAD2F85B5B4007E59A7 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,10 +106,13 @@
 		3E3995E72F84E7A3006541C5 = {
 			isa = PBXGroup;
 			children = (
+				3E39963D2F855DD0006541C5 /* Task+CoreDataClass.swift */,
+				3E39963E2F855DD0006541C5 /* Task+CoreDataProperties.swift */,
 				3E3995F22F84E7A3006541C5 /* ToDe */,
 				3E39960E2F84E7A5006541C5 /* ToDeTests */,
 				3E3996182F84E7A5006541C5 /* ToDeUITests */,
 				3E3995F12F84E7A3006541C5 /* Products */,
+				3E6E6EAB2F85B5B4007E59A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,9 +140,17 @@
 				3E3996012F84E7A5006541C5 /* LaunchScreen.storyboard */,
 				3E3996042F84E7A5006541C5 /* Info.plist */,
 				3E3996052F84E7A5006541C5 /* main.m */,
-				3E39962B2F8503AA006541C5 /* MainTableViewController.h */,
-				3E39962C2F8503AA006541C5 /* MainTableViewController.m */,
 				3E39962E2F8521EB006541C5 /* Task.xcdatamodeld */,
+				3E3996312F852640006541C5 /* ToDe-Bridging-Header.h */,
+				3E3996342F852996006541C5 /* DataSource.h */,
+				3E3996352F852996006541C5 /* DataSource.m */,
+				3E3996382F853C02006541C5 /* periority.h */,
+				3E6E6EAE2F85BCF1007E59A7 /* AddNewTaskViewController.h */,
+				3E6E6EAF2F85BCF1007E59A7 /* AddNewTaskViewController.m */,
+				3E51D4E52F863E5800AB90DE /* EditViewController.h */,
+				3E51D4E62F863E5800AB90DE /* EditViewController.m */,
+				3E51D4E82F8649A200AB90DE /* LuanchViewController.h */,
+				3E51D4E92F8649A200AB90DE /* LuanchViewController.m */,
 			);
 			path = ToDe;
 			sourceTree = "<group>";
@@ -144,6 +172,13 @@
 			path = ToDeUITests;
 			sourceTree = "<group>";
 		};
+		3E6E6EAB2F85B5B4007E59A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,6 +195,9 @@
 			dependencies = (
 			);
 			name = ToDe;
+			packageProductDependencies = (
+				3E6E6EAC2F85B5B4007E59A7 /* SDWebImage */,
+			);
 			productName = ToDe;
 			productReference = 3E3995F02F84E7A3006541C5 /* ToDe.app */;
 			productType = "com.apple.product-type.application";
@@ -211,6 +249,7 @@
 				TargetAttributes = {
 					3E3995EF2F84E7A3006541C5 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 					3E39960A2F84E7A5006541C5 = {
 						CreatedOnToolsVersion = 15.2;
@@ -231,6 +270,9 @@
 				Base,
 			);
 			mainGroup = 3E3995E72F84E7A3006541C5;
+			packageReferences = (
+				3E6E6EAA2F85B5AA007E59A7 /* XCRemoteSwiftPackageReference "sdwebimage" */,
+			);
 			productRefGroup = 3E3995F12F84E7A3006541C5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -247,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E3996422F856C67006541C5 /* Task.xcdatamodeld in Resources */,
 				3E3996032F84E7A5006541C5 /* LaunchScreen.storyboard in Resources */,
 				3E3996002F84E7A5006541C5 /* Assets.xcassets in Resources */,
 				3E3995FE2F84E7A4006541C5 /* Main.storyboard in Resources */,
@@ -274,12 +317,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E3996302F8521EB006541C5 /* Task.xcdatamodeld in Sources */,
 				3E3995FB2F84E7A4006541C5 /* ViewController.m in Sources */,
+				3E51D4E72F863E5800AB90DE /* EditViewController.m in Sources */,
+				3E39963F2F855DD0006541C5 /* Task+CoreDataClass.swift in Sources */,
+				3E6E6EB02F85BCF1007E59A7 /* AddNewTaskViewController.m in Sources */,
 				3E3995F52F84E7A4006541C5 /* AppDelegate.m in Sources */,
 				3E3996062F84E7A5006541C5 /* main.m in Sources */,
-				3E39962D2F8503AA006541C5 /* MainTableViewController.m in Sources */,
+				3E3996362F852996006541C5 /* DataSource.m in Sources */,
+				3E3996402F855DD0006541C5 /* Task+CoreDataProperties.swift in Sources */,
 				3E3995F82F84E7A4006541C5 /* SceneDelegate.m in Sources */,
+				3E51D4EA2F8649A200AB90DE /* LuanchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -473,6 +521,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ITI.ToDe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ToDe/ToDe-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -482,6 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -499,6 +551,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ITI.ToDe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ToDe/ToDe-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -506,6 +560,7 @@
 		3E3996232F84E7A5006541C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -523,6 +578,7 @@
 		3E3996242F84E7A5006541C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -540,6 +596,7 @@
 		3E3996262F84E7A5006541C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -555,6 +612,7 @@
 		3E3996272F84E7A5006541C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -607,6 +665,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3E6E6EAA2F85B5AA007E59A7 /* XCRemoteSwiftPackageReference "sdwebimage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sdwebimage/sdwebimage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3E6E6EAC2F85B5B4007E59A7 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E6E6EAA2F85B5AA007E59A7 /* XCRemoteSwiftPackageReference "sdwebimage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3E39962E2F8521EB006541C5 /* Task.xcdatamodeld */ = {
