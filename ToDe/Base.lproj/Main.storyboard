@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DOf-rn-GxR">
+                                <rect key="frame" x="16" y="114" width="361" height="32"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="In Progress"/>
+                                    <segment title="Done"/>
+                                    <segment title="Todo"/>
+                                    <segment title="Important"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwR-wF-tkJ">
+                                <rect key="frame" x="342" y="69" width="34.333333333333314" height="34.333333333333343"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="+"/>
+                            </button>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="sxu-3j-qFh">
+                                <rect key="frame" x="16" y="58" width="314" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8Oz-bP-WcX">
+                                <rect key="frame" x="16" y="153" width="361" height="665"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Oz-bP-WcX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="19G-Dl-mR9"/>
+                            <constraint firstItem="BwR-wF-tkJ" firstAttribute="leading" secondItem="sxu-3j-qFh" secondAttribute="trailing" constant="12" id="6Ne-8t-Mjx"/>
+                            <constraint firstItem="sxu-3j-qFh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="58" id="JCg-kd-yww"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Oz-bP-WcX" secondAttribute="trailing" constant="16" id="PL7-a9-IBQ"/>
+                            <constraint firstItem="BwR-wF-tkJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="RBW-WC-u2T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BwR-wF-tkJ" secondAttribute="trailing" constant="16.670000000000002" id="Vax-FH-zr4"/>
+                            <constraint firstItem="DOf-rn-GxR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XkE-J1-6X0"/>
+                            <constraint firstItem="DOf-rn-GxR" firstAttribute="top" secondItem="sxu-3j-qFh" secondAttribute="bottom" id="Xsu-KX-Ncf"/>
+                            <constraint firstItem="8Oz-bP-WcX" firstAttribute="top" secondItem="DOf-rn-GxR" secondAttribute="bottom" constant="8" id="mS5-Ud-WkM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DOf-rn-GxR" secondAttribute="trailing" constant="16" id="ntL-mQ-mCV"/>
+                            <constraint firstItem="sxu-3j-qFh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uio-eK-nLY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="sxu-3j-qFh" id="d6M-vT-TUV"/>
+                        <outlet property="segmentsBar" destination="DOf-rn-GxR" id="54R-ZE-fBI"/>
+                        <outlet property="table" destination="8Oz-bP-WcX" id="76O-uL-S3z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142.74809160305344" y="-86.619718309859152"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
