@@ -91,7 +91,7 @@
     self.emptyView = [[UIView alloc] initWithFrame:self.table.bounds];
     self.emptyView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
-    self.emptyImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+    self.emptyImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 250, 150)];
     self.emptyImageView.center = CGPointMake(self.table.center.x, self.table.center.y - 40);
     self.emptyImageView.contentMode = UIViewContentModeScaleAspectFit;
     self.emptyImageView.image = [UIImage imageNamed:@"empty_state"];
