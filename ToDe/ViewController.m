@@ -18,6 +18,10 @@
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (nonatomic, strong) NSMutableArray<Task *> *filteredTasks;
 @property (nonatomic) BOOL isSearching;
+@property UIView *emptyView;
+@property UIImageView *emptyImageView;
+@property UILabel *emptyLabel;
+
 
 @end
 
@@ -57,6 +61,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupEmptyView];
     self.searchBar.delegate = self;
     self.filteredTasks = [NSMutableArray new];
     
@@ -80,6 +85,51 @@
     [self reloadTasks];
     [self.table reloadData];
 }
+
+- (void)setupEmptyView {
+    
+    self.emptyView = [[UIView alloc] initWithFrame:self.table.bounds];
+    self.emptyView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    self.emptyImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+    self.emptyImageView.center = CGPointMake(self.table.center.x, self.table.center.y - 40);
+    self.emptyImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.emptyImageView.image = [UIImage imageNamed:@"empty_state"];
+    
+    self.emptyLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(self.emptyImageView.frame) + 10, self.table.bounds.size.width - 40, 30)];
+    self.emptyLabel.textAlignment = NSTextAlignmentCenter;
+    self.emptyLabel.textColor = [UIColor grayColor];
+    self.emptyLabel.font = [UIFont systemFontOfSize:14];
+    
+    [self.emptyView addSubview:self.emptyImageView];
+    [self.emptyView addSubview:self.emptyLabel];
+    
+    self.emptyView.hidden = YES;
+    
+    [self.table addSubview:self.emptyView];
+}
+- (void)updateEmptyState {
+    
+    NSInteger count = 0;
+
+    if (self.isSearching) {
+        count = self.filteredTasks.count;
+        self.emptyLabel.text = @"No matching results";
+    } else {
+        NSInteger sections = [self numberOfSectionsInTableView:self.table];
+        
+        for (NSInteger i = 0; i < sections; i++) {
+            count += [self tableView:self.table numberOfRowsInSection:i];
+        }
+        
+        self.emptyLabel.text = @"No tasks available";
+    }
+    
+    self.emptyView.hidden = (count > 0);
+}
+
+
+
 
 #pragma mark - Data
 
@@ -107,7 +157,7 @@
 - (IBAction)onSelectedTabChange:(UISegmentedControl *)sender {
     [self reloadTasks];
     [self.table reloadData];
-}
+    [self updateEmptyState];}
 
 #pragma mark - Helpers
 
@@ -143,48 +193,82 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
     Task *task;
-
     if (self.isSearching) {
         task = self.filteredTasks[indexPath.row];
     } else {
         task = [self tasksForCurrentSegmentInSection:indexPath.section][indexPath.row];
     }
-    UIView *oldCard = [cell.contentView viewWithTag:100];
-    [oldCard removeFromSuperview];
 
-    UIView *card = [[UIView alloc] initWithFrame:CGRectInset(cell.contentView.bounds, 12, 6)];
-    card.tag = 100;
-    card.backgroundColor = [UIColor whiteColor];
-    card.layer.cornerRadius = 14;
-    card.layer.shadowColor = [UIColor blackColor].CGColor;
-    card.layer.shadowOpacity = 0.08;
-    card.layer.shadowOffset = CGSizeMake(0, 3);
-    card.layer.shadowRadius = 6;
+    UIView *card = [cell.contentView viewWithTag:100];
+    
+    if (!card) {
+        card = [[UIView alloc] initWithFrame:CGRectInset(cell.contentView.bounds, 12, 6)];
+        card.tag = 100;
+        card.backgroundColor = [UIColor whiteColor];
+        card.layer.cornerRadius = 14;
+        
+        card.layer.shadowColor = [UIColor blueColor].CGColor;
+        card.layer.shadowOpacity = 0.3;
+        card.layer.shadowOffset = CGSizeMake(0, 2);
+        card.layer.shadowRadius = 4;
+        card.layer.shouldRasterize = YES;
+        card.layer.rasterizationScale = UIScreen.mainScreen.scale;
 
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(60, 10, card.bounds.size.width - 120, 22)];
-    title.font = [UIFont boldSystemFontOfSize:16];
+        
+        
+        CGFloat paddingLeft = 60;
+        CGFloat paddingRight = 110;
+        CGFloat width = card.bounds.size.width - paddingLeft - paddingRight;
+
+      
+        
+        
+        UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(12, 18, 36, 36)];
+        icon.tag = 101;
+        icon.contentMode = UIViewContentModeScaleAspectFit;
+        
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(paddingLeft, 10, width, 22)];
+        title.tag = 102;
+        title.font = [UIFont boldSystemFontOfSize:16];
+
+        UILabel *details = [[UILabel alloc] initWithFrame:CGRectMake(paddingLeft, 32, width, 18)];
+        details.tag = 103;
+        details.font = [UIFont systemFontOfSize:13];
+        details.textColor = [UIColor grayColor];
+        
+
+        UILabel *badge = [[UILabel alloc] initWithFrame:CGRectMake(card.bounds.size.width - 110, 18, 90, 24)];
+        badge.tag = 104;
+        badge.textAlignment = NSTextAlignmentCenter;
+        badge.layer.cornerRadius = 6;
+        badge.clipsToBounds = YES;
+        badge.font = [UIFont systemFontOfSize:12 weight:UIFontWeightSemibold];
+        badge.textColor = [UIColor whiteColor];
+
+        [card addSubview:icon];
+        [card addSubview:title];
+        [card addSubview:details];
+        [card addSubview:badge];
+
+        [cell.contentView addSubview:card];
+    }
+
+
+    UIImageView *icon = [card viewWithTag:101];
+    UILabel *title = [card viewWithTag:102];
+    UILabel *details = [card viewWithTag:103];
+    UILabel *badge = [card viewWithTag:104];
+
     title.text = task.taskTitle;
-
-    UILabel *details = [[UILabel alloc] initWithFrame:CGRectMake(60, 32, card.bounds.size.width - 120, 18)];
-    details.font = [UIFont systemFontOfSize:13];
-    details.textColor = [UIColor grayColor];
     details.text = task.taskDetails;
 
-    UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(12, 18, 36, 36)];
 
     NSString *imageURL = [self imageURLForTask:task];
-
     [icon sd_setImageWithURL:[NSURL URLWithString:imageURL]
             placeholderImage:[UIImage imageNamed:@"placeholder"]];
-
-    UILabel *badge = [[UILabel alloc] initWithFrame:CGRectMake(card.bounds.size.width - 110, 18, 90, 24)];
-    badge.textAlignment = NSTextAlignmentCenter;
-    badge.layer.cornerRadius = 6;
-    badge.clipsToBounds = YES;
-    badge.font = [UIFont systemFontOfSize:12 weight:UIFontWeightSemibold];
-    badge.textColor = [UIColor whiteColor];
-
+    
     switch (task.status) {
         case TODO:
             badge.text = @"TODO";
@@ -200,12 +284,6 @@
             break;
     }
 
-    [card addSubview:icon];
-    [card addSubview:title];
-    [card addSubview:details];
-    [card addSubview:badge];
-
-    [cell.contentView addSubview:card];
 
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -224,7 +302,9 @@
 }
 
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
+}
 
 
 - (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView
@@ -275,6 +355,7 @@ trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
         
         [self reloadTasks];
         [self.table reloadData];
+        [self updateEmptyState];
     }];
     
     [alert addAction:cancel];
@@ -407,6 +488,7 @@ leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
     self.isSearching = NO;
     [self.filteredTasks removeAllObjects];
     [self.table reloadData];
+    [self updateEmptyState];
 }
 
 
@@ -414,6 +496,12 @@ leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
     [super viewWillAppear:animated];
     [self reloadTasks];
     [self.table reloadData];
+    [self updateEmptyState];
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [self reloadTasks];
+    [self.table reloadData];
+    [self updateEmptyState];
 }
 
 

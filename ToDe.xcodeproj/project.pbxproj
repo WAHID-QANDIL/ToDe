@@ -21,9 +21,9 @@
 		3E39963F2F855DD0006541C5 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39963D2F855DD0006541C5 /* Task+CoreDataClass.swift */; };
 		3E3996402F855DD0006541C5 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39963E2F855DD0006541C5 /* Task+CoreDataProperties.swift */; };
 		3E3996422F856C67006541C5 /* Task.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 3E39962E2F8521EB006541C5 /* Task.xcdatamodeld */; };
+		3E416BBB2F8822D100B7CE6D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E416BBA2F8822D100B7CE6D /* SDWebImage */; };
 		3E51D4E72F863E5800AB90DE /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E51D4E62F863E5800AB90DE /* EditViewController.m */; };
 		3E51D4EA2F8649A200AB90DE /* LuanchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E51D4E92F8649A200AB90DE /* LuanchViewController.m */; };
-		3E6E6EAD2F85B5B4007E59A7 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E6E6EAC2F85B5B4007E59A7 /* SDWebImage */; };
 		3E6E6EB02F85BCF1007E59A7 /* AddNewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6E6EAF2F85BCF1007E59A7 /* AddNewTaskViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E6E6EAD2F85B5B4007E59A7 /* SDWebImage in Frameworks */,
+				3E416BBB2F8822D100B7CE6D /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +196,7 @@
 			);
 			name = ToDe;
 			packageProductDependencies = (
-				3E6E6EAC2F85B5B4007E59A7 /* SDWebImage */,
+				3E416BBA2F8822D100B7CE6D /* SDWebImage */,
 			);
 			productName = ToDe;
 			productReference = 3E3995F02F84E7A3006541C5 /* ToDe.app */;
@@ -271,7 +271,7 @@
 			);
 			mainGroup = 3E3995E72F84E7A3006541C5;
 			packageReferences = (
-				3E6E6EAA2F85B5AA007E59A7 /* XCRemoteSwiftPackageReference "sdwebimage" */,
+				3E416BB92F8822C300B7CE6D /* XCRemoteSwiftPackageReference "sdwebimage" */,
 			);
 			productRefGroup = 3E3995F12F84E7A3006541C5 /* Products */;
 			projectDirPath = "";
@@ -502,6 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphoneos*]" = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -509,7 +510,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDe/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -532,6 +533,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphoneos*]" = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -539,7 +541,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDe/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -667,7 +669,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3E6E6EAA2F85B5AA007E59A7 /* XCRemoteSwiftPackageReference "sdwebimage" */ = {
+		3E416BB92F8822C300B7CE6D /* XCRemoteSwiftPackageReference "sdwebimage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sdwebimage/sdwebimage";
 			requirement = {
@@ -678,9 +680,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3E6E6EAC2F85B5B4007E59A7 /* SDWebImage */ = {
+		3E416BBA2F8822D100B7CE6D /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3E6E6EAA2F85B5AA007E59A7 /* XCRemoteSwiftPackageReference "sdwebimage" */;
+			package = 3E416BB92F8822C300B7CE6D /* XCRemoteSwiftPackageReference "sdwebimage" */;
 			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
